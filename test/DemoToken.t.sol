@@ -1,23 +1,28 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "forge-std/Test.sol";
-import "../src/DemoToken.sol";
+import {Test, console} from "../lib/forge-std/src/Test.sol";
+import {DemoToken} from "../src/DemoToken.sol";
 
 contract DemoTokenTest is Test {
     DemoToken token;
+    address alice = address(0x1);
 
     function setUp() public {
-        token = new DemoToken(1000 ether); // 1000 tokens
+        // Deploy DemoToken con 1 millón de tokens
+        token = new DemoToken(1_000_000 ether);
     }
 
     function testInitialSupply() public {
-        assertEq(token.totalSupply(), 1000 ether);
+        // El deployer (este contrato de test) debe tener todo el supply
+        assertEq(token.totalSupply(), 1_000_000 ether);
+        assertEq(token.balanceOf(address(this)), 1_000_000 ether);
     }
 
     function testTransfer() public {
-        address alice = address(0x1);
-        token.transfer(alice, 100 ether);
+        // Transferimos 100 tokens a Alice
+        bool success = token.transfer(alice, 100 ether);
+        assertTrue(success);
         assertEq(token.balanceOf(alice), 100 ether);
     }
 }
