@@ -1,0 +1,150 @@
+/* Fuente limpia para presentaciones */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    /* Fondo gris muy claro */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.presentation-container {
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 20px;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+    /* Altura estándar de una diapositiva */
+    padding: 40px;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+}
+
+.slide:last-child {
+    border-bottom: none;
+}
+
+/* Estilos de Tipografía */
+.slide h1 {
+    font-size: 3.5em;
+    color: #007bff;
+    /* Azul primario para títulos */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.slide h2 {
+    font-size: 2.2em;
+    color: #495057;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.slide p {
+    font-size: 1.4em;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 10px auto;
+}
+
+.slide ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: left;
+}
+
+.slide li {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.slide li::before {
+    content: '→';
+    /* Flecha como bullet point */
+    color: #28a745;
+    /* Verde para destacar puntos */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Estilos Específicos */
+#slide-2 .key-dilemma {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #dc3545;
+    /* Rojo para dilema */
+}
+
+#slide-3 .main-headline {
+    font-size: 4em;
+    color: #28a745;
+    font-weight: 900;
+    margin-top: 30px;
+}
+
+.feature-box {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.feature {
+    width: 28%;
+    padding: 20px;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    background-color: #e9f7ff;
+}
+
+.comparison-table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.comparison-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Estilo para la diapositiva de Q&A */
+#slide-13 h1 {
+    font-size: 4.5em;
+    color: #ffc107;
+    /* Amarillo/Naranja para Q&A */
+}
